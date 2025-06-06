@@ -1,0 +1,359 @@
+/* Fonte padrão Quicksand */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+li,
+button {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  font-size: 20px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body.homepage {
+  background-image: url("../imgs/fundo.png");
+  background-repeat: repeat;
+  background-size: 300px;
+}
+
+body:not(.homepage) {
+  background-color: #ffffff;
+}
+
+
+h1,
+h2 {
+  color: #000000;
+  font-size: 1.6rem;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 12px;
+}
+
+body>footer {
+  margin-top: auto;
+  background-color: #efefef;
+  color: rgb(255, 255, 255);
+}
+footer h5.footer-title {
+  color: #000;
+  font-weight: 800;
+}
+
+footer a.footer-link {
+  color: #000;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+footer a.footer-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 767.98px) {
+  footer .footer-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+  footer ul,
+  footer p,
+  footer a {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  footer .row > div {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  footer img {
+    margin-bottom: 8px;
+  }
+}
+
+.marcas-logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  background-color: white;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section,
+.container {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-img-top {
+  max-height: 360px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.card-body {
+  background-color: transparent;
+  border: none;
+}
+/* Menu */
+
+.submenu-wrapper {
+  position: static;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #00a6a6;
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  z-index: 1000;
+  border-radius: 0 0 16px 16px;
+  flex-wrap: nowrap;
+}
+
+@media (min-width: 768px) {
+  .submenu-wrapper {
+    position: absolute;
+    width: 600px;
+    background-color: #00a6a6;
+    margin-top: 0;
+  }
+}
+
+.submenu-wrapper.show {
+  display: flex;
+}
+
+.submenu-column {
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu-column h6 {
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.submenu-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu-column ul li {
+  margin-bottom: 8px;
+}
+
+.submenu-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.submenu-column ul li a:hover {
+  color: #00a6a6;
+}
+
+.submenu-wrapper ul li a:hover,
+.submenu-wrapper ul li a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.sub-submenu {
+  display: none;
+}
+
+.sub-submenu.show {
+  display: block;
+}
+
+.submenu-wrapper a {
+  color: #fff !important;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+  transition: 0.2s;
+}
+
+.submenu-wrapper a:hover {
+  color: #00a6a6;
+}
+
+/* Hover na logo (imagem + texto) */
+.header-main .logo:hover,
+header a[href$="index.html"]:hover {
+  opacity: 0.8;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Hover no coração de favoritos */
+header a[title="Favoritos"]:hover {
+  transform: scale(1.15);
+  transition: transform 0.2s ease-in-out;
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.header-main {
+  background-color: #00a6a6;
+  flex-wrap: wrap;
+}
+
+.header-main .logo span {
+  color: white;
+}
+
+.search-bar input {
+  border-radius: 10px;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+}
+
+.search-bar button {
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.navbar {
+  background-color: #00a6a6;
+  position: relative;
+  z-index: 10;
+}
+
+/* Navbar padrão */
+.navbar-nav .nav-link {
+  font-size: 1.2rem;
+  color: #000 !important;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* Hover apenas com sublinhado */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #000 !important;
+  background-color: transparent;
+}
+
+/* Item ativo ao clicar */
+.navbar-nav .nav-link.nav-active {
+  background-color: #00a6a6;
+  color: #fff !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: bold;
+  border-radius: 20px 20px 0 0;
+}
+
+
+.navbar-brand,
+.nav-link {
+  font-size: 18px;
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+}
+
+.carousel .carousel-inner {
+  padding: 1.5rem 0;
+}
+
+/* Banner DESKTOP */
+.carousel .carousel-item img.carousel-banner {
+  max-height: 450px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 80px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Banner MOBILE */
+.carousel .carousel-item img.carousel-banner-mobile {
+  max-height: 260px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  margin: 0 auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  background-size: 60% 60%;
+  background-position: center;
+}
+
+/* 🔧 Ajustes apenas para MOBILE */
+@media (max-width: 767px) {
+  .submenu-wrapper {
+    flex-direction: column !important;
+    width: 100% !important;
+    overflow-x: hidden;
+  }
+
+  .submenu-column {
+    min-width: 100% !important;
+    flex-wrap: wrap;
+  }
+
+  .submenu-column ul li a {
+    white-space: normal !important; /* Permite quebra de linha */
+    word-break: break-word; /* Garante quebra correta */
+  }
+}
+
+

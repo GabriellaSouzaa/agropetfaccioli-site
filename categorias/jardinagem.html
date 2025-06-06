@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jardinagem - AgroPetFaccioli</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
+  <link rel="icon" href="../imgs/logo-topo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ============================
+     ESTILO DESKTOP (≥768px)
+  ============================= */
+    @media (min-width: 768px) {
+      body.pagina-com-fundo-jardinagem {
+        background-size: cover;
+        background-color: #fff;
+        font-family: 'Quicksand', sans-serif;
+        margin: 0;
+      }
+
+      .pagina-com-fundo-jardinagem section {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 10px 5vw 100px;
+        max-width: 90%;
+        margin: 20px auto 0;
+        backdrop-filter: blur(2px);
+        color: #111111;
+      }
+
+      .pagina-com-fundo-jardinagem section h2,
+      .pagina-com-fundo-jardinagem section p,
+      .pagina-com-fundo-jardinagem section strong {
+        color: #111111;
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+
+      section article p {
+        margin-bottom: 1.2rem;
+      }
+
+      h1 {
+        color: #000;
+        font-weight: 900;
+        text-align: center;
+        font-size: 1.6rem;
+      }
+
+      .btn {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+      }
+
+      footer {
+        background-color: #fff;
+      }
+
+      .imagem-jardinagem {
+        width: 100%;
+        max-width: 950px;
+        margin-right: -100px;
+        height: auto;
+      }
+    }
+
+    /* ============================
+     ESTILO MOBILE (<768px)
+  ============================= */
+    @media (max-width: 768px) {
+      .mobile-header {
+        background-color: #00a6a6 !important;
+      }
+    }
+
+    @media (max-width: 0) {
+      body {
+        font-family: 'Quicksand', sans-serif;
+      }
+
+      .texto-jardinagem {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0 16px;
+        color: #222;
+      }
+
+      .texto-jardinagem h1,
+      .texto-jardinagem h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: left;
+        margin-bottom: 16px;
+        color: #222;
+      }
+
+      .texto-jardinagem ul {
+        padding-left: 1.2rem;
+        margin-top: 0.5rem;
+      }
+
+      .texto-jardinagem p {
+        margin-bottom: 1rem;
+        color: #222;
+      }
+
+      .btn {
+        font-size: 0.95rem !important;
+        padding: 10px 20px !important;
+      }
+
+      .imagem-jardinagem {
+        max-width: 100% !important;
+        height: auto;
+        margin: 20px auto 0;
+        display: block;
+      }
+
+      footer ul,
+      footer p,
+      footer a {
+        font-size: 0.9rem;
+        text-align: left;
+      }
+
+      footer .row>div {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      footer img {
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body class="pagina-com-fundo-jardinagem">
+  <!-- HEADER -->
+  <header>
+    <!-- Mobile -->
+    <div class="text-white px-3 py-2 d-flex justify-content-center position-relative d-md-none mobile-header">
+      <!-- Botão lateral fixado à esquerda -->
+      <button class="btn btn-link text-white fs-3 p-0 position-absolute start-0 ms-3" type="button"
+        data-bs-toggle="collapse" data-bs-target="#menu">
+        ☰
+      </button>
+      <!-- Logo centralizada -->
+      <a href="../index.html" class="d-flex align-items-center text-decoration-none text-white">
+        <img src="../imgs/logo-topo.png" alt="AgroPetFaccioli" width="36" height="36" class="me-2 rounded-circle">
+        <span class="fw-bold fs-5">AgroPet</span>
+      </a>
+      <!-- Futuro botão de favoritos -->
+      <!-- <a href="favoritos/favoritos.html" class="text-white fs-4 position-absolute end-0 me-3" title="Favoritos">❤️</a> -->
+    </div>
+    <!-- Barra de busca abaixo no mobile -->
+    <div class="bg-white py-2 d-md-none">
+      <form id="searchFormMobile" class="d-flex justify-content-center px-3">
+        <input id="searchInputMobile" type="text" class="form-control me-2"
+          placeholder="Busque por ração, brinquedos, banho..." style="max-width: 80%;">
+        <button class="btn btn-warning" type="submit">🔍</button>
+      </form>
+    </div>
+
+    <!-- Desktop -->
+    <div class="text-white px-4 py-3 d-none d-md-flex align-items-center justify-content-between"
+      style="background-color: #00a6a6;">
+      <a href="../index.html" class="d-flex align-items-center text-decoration-none text-white">
+        <img src="../imgs/logo.png" alt="AgroPetFaccioli" width="120" class="me-2">
+        <span class="fw-bold fs-3"></span>
+      </a>
+      <form id="searchFormDesktop" class="search-bar d-flex flex-grow-1 mx-4">
+        <input id="searchInputDesktop" type="text" class="form-control me-2"
+          placeholder="Busque por ração, brinquedos, banho...">
+        <button class="btn btn-warning px-4" type="submit">🔍</button>
+      </form>
+      <!-- <a href="favoritos/favoritos.html" class="text-white fs-4" title="Favoritos">❤️</a> -->
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light px-4 position-relative" style="background-color: #efefef;">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse position-relative" id="menu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="../categorias/farmacia.html">Farmácia</a></li>
+          <li class="nav-item"><a class="nav-link" href="../categorias/outrosAnimais.html">Outros animais</a></li>
+          <li class="nav-item position-relative">
+            <button class="nav-link btn btn-link text-light" id="gatoToggle" type="button">Gato</button>
+            <div id="submenuGato" class="submenu-wrapper">
+              <div class="submenu-column">
+                <h6>Menu</h6>
+                <ul>
+                  <li><a href="#" class="categoria-link" data-submenu="gatoRacao">Rações</a></li>
+                  <li><a href="#" class="categoria-link" data-submenu="gatoAcessorios">Acessórios</a></li>
+                  <li><a href="#" class="categoria-link" data-submenu="gatoHigiene">Higiene</a></li>
+                </ul>
+              </div>
+              <div class="submenu-column">
+                <div class="sub-submenu" id="submenu-gatoRacao">
+                  <h6>Rações</h6>
+                  <ul>
+                    <li><a href="../produtos/gato-adulto.html">Ração Adulto</a></li>
+                    <li><a href="../produtos/gato-filhote.html">Ração Filhote</a></li>
+                    <li><a href="../produtos/gato-castrado.html">Ração Castrado</a></li>
+                  </ul>
+                </div>
+                <div class="sub-submenu" id="submenu-gatoAcessorios">
+                  <h6>Acessórios</h6>
+                  <ul>
+                    <li><a href="../produtos/caminha-gato.html">Caminhas</a></li>
+                    <li><a href="../produtos/gato-acessorios.html">Brinquedos</a></li>
+                  </ul>
+                </div>
+                <div class="sub-submenu" id="submenu-gatoHigiene">
+                  <h6>Higiene</h6>
+                  <ul>
+                    <li><a href="../produtos/gato-areia.html">Areia</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item position-relative">
+            <button class="nav-link btn btn-link text-dark" id="cachorroToggle" type="button">Cachorro</button>
+            <div id="submenuCachorro" class="submenu-wrapper">
+              <div class="submenu-column">
+                <h6>Menu</h6>
+                <ul>
+                  <li><a href="#" class="categoria-link" data-submenu="cachorroRacao">Rações</a></li>
+                  <li><a href="#" class="categoria-link" data-submenu="cachorroAcessorios">Acessórios</a></li>
+                  <li><a href="#" class="categoria-link" data-submenu="cachorroHigiene">Higiene</a></li>
+                </ul>
+              </div>
+              <div class="submenu-column">
+                <div class="sub-submenu" id="submenu-cachorroRacao">
+                  <h6>Rações</h6>
+                  <ul>
+                    <li><a href="../produtos/cachorro-adulto.html">Ração Adulto</a></li>
+                    <li><a href="../produtos/cachorro-filhote.html">Ração Filhote</a></li>
+                    <li><a href="../produtos/cachorro-senior.html">Ração Sênior</a></li>
+                  </ul>
+                </div>
+                <div class="sub-submenu" id="submenu-cachorroAcessorios">
+                  <h6>Acessórios</h6>
+                  <ul>
+                    <li><a href="../produtos/cachorro-brinquedos.html">Brinquedos</a></li>
+                    <li><a href="../produtos/caminha-cachorro.html">Caminhas</a></li>
+                  </ul>
+                </div>
+                <div class="sub-submenu" id="submenu-cachorroHigiene">
+                  <h6>Higiene</h6>
+                  <ul>
+                    <li><a href="../produtos/higieneDog.html">Tapete Higiênico</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../categorias/banho-tosa.html">Banho e Tosa</a></li>
+          <li class="nav-item"><a class="nav-link" href="../categorias/pesca.html">Pesca</a></li>
+          <li class="nav-item"><a class="nav-link" href="../categorias/jardinagem.html">Jardinagem</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO -->
+  <div class="container-fluid px-3 px-md-5">
+    <!-- DESKTOP -->
+    <div class="d-none d-md-block">
+      <section>
+        <div class="row align-items-center">
+          <!-- Texto -->
+          <div class="col-md-6 pe-md-5 texto-jardinagem">
+            <h1 class="mb-4">🌿 Jardinagem com a AgroPetFaccioli</h1>
+            <article>
+              <p>Ter um jardim bem cuidado vai muito além da estética — é uma forma de promover bem-estar, criar um
+                ambiente mais agradável e se reconectar com a natureza.</p>
+              <p>Na <strong>AgroPetFaccioli</strong>, você encontra uma linha completa de produtos para jardinagem,
+                com
+                atendimento personalizado diretamente pelo WhatsApp.</p>
+              <p class="fw-semibold">Confira os principais itens disponíveis:</p>
+              <ul>
+                <li>🌱 Ferramentas para cultivo e manutenção</li>
+                <li>🪴 Vasos e itens decorativos</li>
+                <li>🌾 Substratos e fertilizantes</li>
+                <li>🚿 Irrigação e regadores</li>
+                <li>🎍 Paisagismo e acessórios</li>
+              </ul>
+              <p class="fw-bold mt-2">💬 Faça seu pedido pelo WhatsApp e receba produtos de confiança para seu espaço
+                verde.</p>
+              <a class="btn btn-success mt-3 text-white fw-semibold" target="_blank"
+                href="https://wa.me/5515996601012?text=Olá!%20Gostaria%20de%20comprar%20produtos%20desta%20categoria.">
+                Comprar pelo WhatsApp
+              </a>
+            </article>
+          </div>
+          <!-- Imagem -->
+          <div class="col-md-6 text-end pe-0">
+            <img src="../imgs/jardimm.png" alt="Imagem de Jardinagem" class="img-fluid"
+              style="max-width: 650px; margin-right: -50px;">
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- MOBILE -->
+    <div class="d-block d-md-none">
+      <section style="padding: 16px;">
+        <h1 style="
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #222;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      text-align: left;
+    ">
+          🌿Jardinagem com a AgroPetFaccioli
+        </h1>
+
+        <article style="
+      font-size: 0.95rem;
+      color: #222;
+      line-height: 1.6;
+      text-align: left;
+    ">
+          <p>
+            Na AgroPetFaccioli, o apaixonado por jardinagem encontra as melhores opções de <strong>produtos e
+              acessórios</strong> para cuidar do seu jardim com praticidade e qualidade.
+          </p>
+
+          <p>
+            Confira as sugestões ideais para transformar o ambiente com mais verde, bem-estar e decoração. Tudo com
+            atendimento direto pelo WhatsApp.
+          </p>
+
+          <h2 style="font-size: 1.05rem; font-weight: 600; margin-top: 24px;">O que você encontra:</h2>
+          <ul style="padding-left: 1.2rem; margin-top: 8px;">
+            <li>🌱Ferramentas para cultivo e manutenção</li>
+            <li>🪴Vasos decorativos e funcionais</li>
+            <li>🌾Substratos e fertilizantes</li>
+            <li>🚿Regadores, mangueiras e acessórios de irrigação</li>
+            <li>🎍Itens para paisagismo e decoração externa</li>
+          </ul>
+
+          <p class="mt-3">
+            Trabalhamos com marcas de confiança e produtos selecionados para garantir resultados em qualquer estação
+            do
+            ano.
+          </p>
+
+          <p style="font-weight: 600;">
+            💬Atendimento prático e rápido via WhatsApp!
+          </p>
+
+          <a class="btn btn-success text-white fw-semibold mt-2 px-4 py-2" style="font-size: 0.95rem;" target="_blank"
+            href="https://wa.me/5515996601012?text=Olá!%20Gostaria%20de%20comprar%20produtos%20desta%20categoria.">
+            Comprar pelo WhatsApp
+          </a>
+        </article>
+      </section>
+    </div>
+
+  </div>
+
+  <!-- CATEGORIAS VISUAIS - DESKTOP -->
+  <section class="container my-5 px-3 d-none d-md-block">
+    <h2 class="text-center mb-4 text-black">Categorias</h2>
+    <div class="row gx-2 justify-content-center align-items-start text-center">
+      <!-- Farmácia -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/farmacia.html" class="text-decoration-none">
+          <img src="../imgs/fotoF-categ.png" alt="Farmácia" class="img-fluid rounded-circle mb-2" style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Farmácia</p>
+        </a>
+      </div>
+      <!-- Cachorro -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/cachorro.html" class="text-decoration-none">
+          <img src="../imgs/fotoD-categ.png" alt="Cachorro" class="img-fluid rounded-circle mb-2" style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Cachorro</p>
+        </a>
+      </div>
+      <!-- Gato -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/gato.html" class="text-decoration-none">
+          <img src="../imgs/fotoG-categ.png" alt="Gato" class="img-fluid rounded-circle mb-2" style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Gato</p>
+        </a>
+      </div>
+      <!-- Pesca -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/pesca.html" class="text-decoration-none">
+          <img src="../imgs/fotoPesca-categ.png" alt="Pesca" class="img-fluid rounded-circle mb-2" style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Pesca</p>
+        </a>
+      </div>
+      <!-- Jardinagem -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/jardinagem.html" class="text-decoration-none">
+          <img src="../imgs/fotoJ-categ.png" alt="Jardinagem" class="img-fluid rounded-circle mb-2"
+            style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Jardinagem</p>
+        </a>
+      </div>
+      <!-- Banho e Tosa -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/banho-tosa.html" class="text-decoration-none">
+          <img src="../imgs/fotoBanho-categ.png" alt="Banho e Tosa" class="img-fluid rounded-circle mb-2"
+            style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Banho e Tosa</p>
+        </a>
+      </div>
+      <!-- Outros Pets -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/outrosAnimais.html" class="text-decoration-none">
+          <img src="../imgs/fotoP-categ.png" alt="Outros Pets" class="img-fluid rounded-circle mb-2"
+            style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Outros Pets</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS VISUAIS - MOBILE -->
+  <section class="container my-5 px-3 d-block d-md-none">
+    <h2 class="text-center mb-4 text-black">Categorias</h2>
+    <div class="row row-cols-2 g-3 justify-content-center text-center">
+      <!-- Mesmas categorias com espaçamento e tamanho ajustados -->
+      <div class="col">
+        <a href="../categorias/farmacia.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoF-categ.png" alt="Farmácia" class="img-fluid rounded-circle mb-2" style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Farmácia</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/cachorro.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoD-categ.png" alt="Cachorro" class="img-fluid rounded-circle mb-2" style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Cachorro</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="categorias/gato.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoG-categ.png" alt="Gato" class="img-fluid rounded-circle mb-2" style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Gato</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/pesca.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoPesca-categ.png" alt="Pesca" class="img-fluid rounded-circle mb-2" style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Pesca</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/jardinagem.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoJ-categ.png" alt="Jardinagem" class="img-fluid rounded-circle mb-2"
+            style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Jardinagem</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/banho-tosa.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoBanho-categ.png" alt="Banho e Tosa" class="img-fluid rounded-circle mb-2"
+            style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Banho e Tosa</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/outrosAnimais.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoP-categ.png" alt="Outros Pets" class="img-fluid rounded-circle mb-2"
+            style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Outros Pets</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-light text-dark pt-5 pb-4 mt-auto">
+    <div class="container text-center text-md-start">
+      <div class="row gy-4">
+        <div class="col-12 col-md-3">
+          <img src="../imgs/logoEscrita.png" alt="AgroPetFaccioli" style="max-width: 180px;">
+        </div>
+        <div class="col-6 col-md-2">
+          <h5 class="footer-title">Sobre nós</h5>
+          <ul class="list-unstyled">
+            <li><a class="footer-link" href="../institucional/quem-somos.html">Quem somos</a></li>
+            <li><a class="footer-link" href="../institucional/nossas-lojas.html">Nossas lojas</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5 class="footer-title">Dúvidas</h5>
+          <ul class="list-unstyled">
+            <li><a class="footer-link" href="../institucional/atendimento.html">Atendimento</a></li>
+            <li><a class="footer-link" href="../institucional/politica-entrega.html">Política de entrega</a>
+            </li>
+            <li><a class="footer-link" href="../institucional/politica-privacidade.html">Política de
+                privacidade</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5 class="footer-title">Serviços Pet</h5>
+          <ul class="list-unstyled">
+            <li><a class="footer-link" href="../institucional/banho-e-tosa.html">Banho e Tosa</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5 class="footer-title">Siga nas redes</h5>
+          <a href="#"><img src="../imgs/icon-insta.png" width="30" class="me-2"></a>
+          <a href="#"><img src="../imgs/icon-whatsapp.png" width="30"></a>
+        </div>
+      </div>
+      <div class="text-center text-muted mt-4">
+        &copy; 2025 AgroPetFaccioli – Todos os direitos reservados
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // ✅ SEGURANÇA: só adiciona listener se existir o elemento
+      function setupSearch(formId, inputId) {
+        const form = document.getElementById(formId);
+        const input = document.getElementById(inputId);
+        if (!form || !input) return;
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const query = input.value.trim().toLowerCase();
+          if (!query) return;
+
+          const keywordsMap = {
+            'ração para gato': '/categorias/gato.html',
+            'ração de gato': '/categorias/gato.html',
+            'ração de cachorro': '/categorias/cachorro.html',
+            'ração para cachorro': '/categorias/cachorro.html',
+            'ração outros': '/categorias/outrosAnimais.html',
+            'ração de roedores': '/categorias/outrosAnimais.html',
+            'ração para roedores': '/categorias/outrosAnimais.html',
+            'ração de aves': '/categorias/outrosAnimais.html',
+            'ração para aves': '/categorias/outrosAnimais.html',
+            'ração': '/categorias/cachorro.html',
+            'rações': '/categorias/cachorro.html',
+            'ração de gato adulto': '/produtos/gato-adulto.html',
+            'ração de gato filhote': '/produtos/gato-filhote.html',
+            'ração de gato castrado': '/produtos/gato-castrado.html',
+            'ração de cão adulto': '/produtos/cachorro-adulto.html',
+            'ração de cão filhote': '/produtos/cachorro-filhote.html',
+            'ração de cão idoso': '/produtos/cachorro-senior.html',
+            'areia': '/produtos/gato-areia.html',
+            'areia para gato': '/produtos/gato-areia.html',
+            'tapete higienico': '/produtos/higieneDog.html',
+            'brinquedos para gato': '/produtos/gato-acessorios.html',
+            'brinquedos para cachorro': '/produtos/cachorro-brinquedos.html',
+            'mordedor': '/produtos/cachorro-brinquedos.html',
+            'arranhador': '/produtos/gato-acessorios.html',
+            'arranhador para gatos': '/produtos/gato-acessorios.html',
+            'caminha de gato': '/produtos/caminha-gato.html',
+            'caminha de cachorro': '/produtos/caminha-cachorro.html',
+            'casinha de cachorro': '/produtos/caminha-cachorro.html',
+            'farmácia': '/categorias/farmacia.html',
+            'farmacia': '/categorias/farmacia.html',
+            'banho': '/categorias/banho-tosa.html',
+            'banho e tosa': '/categorias/banho-tosa.html',
+            'tosa': '/categorias/banho-tosa.html',
+            'tosa e banho': '/categorias/banho-tosa.html',
+            'pesca': '/categorias/pesca.html',
+            'jardinagem': '/categorias/jardinagem.html',
+            'jardim': '/categorias/jardinagem.html',
+            'outros': '/categorias/outrosAnimais.html',
+            'cachorro': '/categorias/cachorro.html',
+            'gato': '/categorias/gato.html'
+          };
+
+          for (const keyword in keywordsMap) {
+            if (query.includes(keyword)) {
+              window.location.href = keywordsMap[keyword];
+              return;
+            }
+          }
+
+          alert("Produto ou categoria não encontrado.");
+        });
+      }
+
+      setupSearch("searchFormDesktop", "searchInputDesktop");
+      setupSearch("searchFormMobile", "searchInputMobile");
+
+      // ✅ MENU NAVBAR
+      const gatoToggle = document.getElementById("gatoToggle");
+      const cachorroToggle = document.getElementById("cachorroToggle");
+      const submenuGato = document.getElementById("submenuGato");
+      const submenuCachorro = document.getElementById("submenuCachorro");
+      const allNavLinks = document.querySelectorAll(".nav-link");
+
+      function resetNavActive() {
+        allNavLinks.forEach(link => link.classList.remove("nav-active"));
+      }
+
+      function fecharMenus() {
+        submenuGato?.classList.remove("show");
+        submenuCachorro?.classList.remove("show");
+        document.querySelectorAll('.sub-submenu').forEach(el => el.classList.remove('show'));
+      }
+
+      // Ativar menu conforme página atual
+      const currentPath = window.location.pathname.split("/").pop();
+      allNavLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if (href && href.includes(currentPath)) {
+          link.classList.add("nav-active");
+        }
+      });
+
+      allNavLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+          if (!this.id.includes("Toggle")) {
+            fecharMenus();
+            resetNavActive();
+            this.classList.add("nav-active");
+          }
+        });
+      });
+
+      // Gato
+      gatoToggle?.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = submenuGato.classList.contains("show");
+        fecharMenus();
+        resetNavActive();
+        if (!isOpen) {
+          submenuGato.classList.add("show");
+          gatoToggle.classList.add("nav-active");
+        }
+      });
+
+      // Cachorro
+      cachorroToggle?.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = submenuCachorro.classList.contains("show");
+        fecharMenus();
+        resetNavActive();
+        if (!isOpen) {
+          submenuCachorro.classList.add("show");
+          cachorroToggle.classList.add("nav-active");
+        }
+      });
+
+      // Fecha menus ao clicar fora
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".submenu-wrapper") && !e.target.closest(".nav-item")) {
+          fecharMenus();
+          resetNavActive();
+        }
+      });
+
+      // Submenu dinâmico interno
+      document.querySelectorAll(".submenu-wrapper .categoria-link").forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const submenu = this.getAttribute("data-submenu");
+          const wrapper = this.closest(".submenu-wrapper");
+
+          wrapper.querySelectorAll(".sub-submenu").forEach(div => div.classList.remove("show"));
+          wrapper.querySelectorAll(".categoria-link").forEach(l => l.classList.remove("active"));
+          this.classList.add("active");
+
+          const target = wrapper.querySelector("#submenu-" + submenu);
+          if (target) target.classList.add("show");
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

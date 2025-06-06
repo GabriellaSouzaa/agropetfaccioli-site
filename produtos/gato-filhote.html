@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ração Gato Filhote - AgroPetFaccioli</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
+  <link rel="icon" href="../imgs/logo-topo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    @media (max-width: 768px) {
+      .mobile-header {
+        background-color: #00a6a6 !important;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      .mobile-marcas {
+        padding: 1rem;
+      }
+
+      .mobile-marcas h1 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .mobile-card {
+        border: 1px solid #ddd;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        background-color: #fff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        min-height: 20px;
+      }
+
+      .mobile-card img {
+        max-width: 100px;
+        height: auto;
+        border-radius: 1em;
+        margin-bottom: 1rem;
+        object-fit: contain;
+      }
+
+      .mobile-card h5 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .mobile-card p {
+        font-size: 0.9rem;
+        margin-bottom: auto;
+        line-height: 1.3rem;
+        text-align: left;
+      }
+
+      .mobile-card a {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+        margin-top: 1rem;
+      }
+
+      .mobile-marcas .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Ajustes para DESKTOP */
+    @media (min-width: 769px) {
+      .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        text-align: left;
+      }
+
+      .card-img-top {
+        height: 200px;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto 16px auto;
+        border-radius: 1em;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 1rem 1rem 0.5rem 1rem;
+      }
+
+      .card-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 0.6rem;
+        text-align: left;
+      }
+
+      .card-text {
+        font-size: 1.15rem;
+        line-height: 1.5;
+        text-align: left;
+        margin-bottom: 1rem;
+      }
+
+      .card-body a.btn {
+        margin-top: auto;
+        font-size: 1rem;
+        padding: 6px 12px;
+      }
+    }
+
+    /* Estilo geral */
+    .card-img-top {
+      margin-bottom: 16px;
+      border-radius: 1em;
+    }
+
+    .card-body {
+      padding-top: 0 !important;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <!-- Mobile -->
+    <div class="text-white px-3 py-2 d-flex justify-content-center position-relative d-md-none mobile-header">
+      <!-- Botão lateral fixado à esquerda -->
+      <button class="btn btn-link text-white fs-3 p-0 position-absolute start-0 ms-3" type="button"
+        data-bs-toggle="collapse" data-bs-target="#menu">
+        ☰
+      </button>
+      <!-- Logo centralizada -->
+      <a href="../index.html" class="d-flex align-items-center text-decoration-none text-white">
+        <img src="../imgs/logo-topo.png" alt="AgroPetFaccioli" width="36" height="36" class="me-2 rounded-circle">
+        <span class="fw-bold fs-5">AgroPet</span>
+      </a>
+      <!-- Futuro botão de favoritos -->
+      <!-- <a href="favoritos/favoritos.html" class="text-white fs-4 position-absolute end-0 me-3" title="Favoritos">❤️</a> -->
+    </div>
+    <!-- Barra de busca abaixo no mobile -->
+    <div class="bg-white py-2 d-md-none">
+      <form id="searchFormMobile" class="d-flex justify-content-center px-3">
+        <input id="searchInputMobile" type="text" class="form-control me-2"
+          placeholder="Busque por ração, brinquedos, banho..." style="max-width: 80%;">
+        <button class="btn btn-warning" type="submit">🔍</button>
+      </form>
+    </div>
+
+    <!-- Desktop -->
+    <div class="text-white px-4 py-3 d-none d-md-flex align-items-center justify-content-between"
+      style="background-color: #00a6a6;">
+      <a href="../index.html" class="d-flex align-items-center text-decoration-none text-white">
+        <img src="../imgs/logo.png" alt="AgroPetFaccioli" width="120" class="me-2">
+        <span class="fw-bold fs-3"></span>
+      </a>
+      <form id="searchFormDesktop" class="search-bar d-flex flex-grow-1 mx-4">
+        <input id="searchInputDesktop" type="text" class="form-control me-2"
+          placeholder="Busque por ração, brinquedos, banho...">
+        <button class="btn btn-warning px-4" type="submit">🔍</button>
+      </form>
+      <!-- <a href="favoritos/favoritos.html" class="text-white fs-4" title="Favoritos">❤️</a> -->
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light px-4 position-relative" style="background-color: #efefef;">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse position-relative" id="menu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="../categorias/farmacia.html">Farmácia</a></li>
+          <li class="nav-item"><a class="nav-link" href="../categorias/outrosAnimais.html">Outros animais</a></li>
+          <li class="nav-item position-relative">
+            <button class="nav-link btn btn-link text-light" id="gatoToggle" type="button">Gato</button>
+            <div id="submenuGato" class="submenu-wrapper">
+              <div class="submenu-column">
+                <h6>Menu</h6>
+                <ul>
+                  <li><a href="#" class="categoria-link" data-submenu="gatoRacao">Rações</a></li>
+                  <li><a href="#" class="categoria-link" data-submenu="gatoAcessorios">Acessórios</a></li>
+                  <li><a href="#" class="categoria-link" data-submenu="gatoHigiene">Higiene</a></li>
+                </ul>
+              </div>
+              <div class="submenu-column">
+                <div class="sub-submenu" id="submenu-gatoRacao">
+                  <h6>Rações</h6>
+                  <ul>
+                    <li><a href="../produtos/gato-adulto.html">Ração Adulto</a></li>
+                    <li><a href="../produtos/gato-filhote.html">Ração Filhote</a></li>
+                    <li><a href="../produtos/gato-castrado.html">Ração Castrado</a></li>
+                  </ul>
+                </div>
+                <div class="sub-submenu" id="submenu-gatoAcessorios">
+                  <h6>Acessórios</h6>
+                  <ul>
+                    <li><a href="../produtos/caminha-gato.html">Caminhas</a></li>
+                    <li><a href="../produtos/gato-acessorios.html">Brinquedos</a></li>
+                  </ul>
+                </div>
+                <div class="sub-submenu" id="submenu-gatoHigiene">
+                  <h6>Higiene</h6>
+                  <ul>
+                    <li><a href="../produtos/gato-areia.html">Areia</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item position-relative">
+            <button class="nav-link btn btn-link text-dark" id="cachorroToggle" type="button">Cachorro</button>
+            <div id="submenuCachorro" class="submenu-wrapper">
+              <div class="submenu-column">
+                <h6>Menu</h6>
+                <ul>
+                  <li><a href="#" class="categoria-link" data-submenu="cachorroRacao">Rações</a></li>
+                  <li><a href="#" class="categoria-link" data-submenu="cachorroAcessorios">Acessórios</a></li>
+                  <li><a href="#" class="categoria-link" data-submenu="cachorroHigiene">Higiene</a></li>
+                </ul>
+              </div>
+              <div class="submenu-column">
+                <div class="sub-submenu" id="submenu-cachorroRacao">
+                  <h6>Rações</h6>
+                  <ul>
+                    <li><a href="../produtos/cachorro-adulto.html">Ração Adulto</a></li>
+                    <li><a href="../produtos/cachorro-filhote.html">Ração Filhote</a></li>
+                    <li><a href="../produtos/cachorro-senior.html">Ração Sênior</a></li>
+                  </ul>
+                </div>
+                <div class="sub-submenu" id="submenu-cachorroAcessorios">
+                  <h6>Acessórios</h6>
+                  <ul>
+                    <li><a href="../produtos/cachorro-brinquedos.html">Brinquedos</a></li>
+                    <li><a href="../produtos/caminha-cachorro.html">Caminhas</a></li>
+                  </ul>
+                </div>
+                <div class="sub-submenu" id="submenu-cachorroHigiene">
+                  <h6>Higiene</h6>
+                  <ul>
+                    <li><a href="../produtos/higieneDog.html">Tapete Higiênico</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../categorias/banho-tosa.html">Banho e Tosa</a></li>
+          <li class="nav-item"><a class="nav-link" href="../categorias/pesca.html">Pesca</a></li>
+          <li class="nav-item"><a class="nav-link" href="../categorias/jardinagem.html">Jardinagem</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO DESKTOP -->
+  <section class="container my-5 d-none d-md-block">
+    <h1 class="text-center mb-4">Marcas de Ração para Gato Filhote</h1>
+    <div class="row g-4">
+
+      <!-- Origens -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-origens.png" class="card-img-top rounded" alt="Origens">
+          <div class="card-body">
+            <h5 class="card-title">Origens</h5>
+            <p class="card-text">Com prebióticos, minerais e proteínas que auxiliam no desenvolvimento saudável do
+              sistema digestivo e da pelagem dos filhotes.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Origens para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premier -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-premier.png" class="card-img-top rounded" alt="Premier">
+          <div class="card-body">
+            <h5 class="card-title">Premier</h5>
+            <p class="card-text">Nutrição completa com DHA e níveis adequados de proteína e gordura para o crescimento
+              saudável e imunidade do seu filhote.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Premier para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BioNatural -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-bioN.png" class="card-img-top rounded" alt="BioNatural">
+          <div class="card-body">
+            <h5 class="card-title">BioNatural</h5>
+            <p class="card-text">Fórmula natural sem corantes artificiais, rica em vitaminas e minerais essenciais para
+              o fortalecimento dos filhotes.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração BioNatural para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Golden -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-golden.png" class="card-img-top rounded" alt="Golden">
+          <div class="card-body">
+            <h5 class="card-title">Golden</h5>
+            <p class="card-text">Ideal para a fase de crescimento dos gatos, com suporte ao sistema imunológico e saúde
+              intestinal dos filhotes.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Golden para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guabi -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-guabi.png" class="card-img-top rounded" alt="Guabi Natural">
+          <div class="card-body">
+            <h5 class="card-title">Guabi Natural</h5>
+            <p class="card-text">Com ingredientes nobres e balanceados para garantir digestibilidade, saúde da pele e
+              energia para os filhotes.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Guabi Natural para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- N&D -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-N&D.png" class="card-img-top rounded" alt="N&D">
+          <div class="card-body">
+            <h5 class="card-title">N&D</h5>
+            <p class="card-text">Livre de transgênicos, com baixo índice glicêmico e carnes frescas que oferecem alto
+              valor nutricional para o filhote crescer forte.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração N&D para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special Cat -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-specialCat.png" class="card-img-top rounded" alt="Special Cat">
+          <div class="card-body">
+            <h5 class="card-title">Special Cat</h5>
+            <p class="card-text">Custo-benefício excelente, com proteínas e nutrientes para suprir as necessidades dos
+              filhotes em crescimento.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Special Cat para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pedigree -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-pedigree.png" class="card-img-top rounded" alt="Pedigree">
+          <div class="card-body">
+            <h5 class="card-title">Pedigree</h5>
+            <p class="card-text">Com fibras, vitaminas e minerais que garantem crescimento equilibrado, energia e
+              imunidade para gatos filhotes.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Pedigree para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fórmula Natural -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-formulaN.png" class="card-img-top rounded" alt="Fórmula Natural">
+          <div class="card-body">
+            <h5 class="card-title">Fórmula Natural</h5>
+            <p class="card-text">Super premium com antioxidantes naturais, DHA e fibras que ajudam no desenvolvimento
+              cerebral e digestivo do filhote.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Fórmula Natural para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gran Plus -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="../imgs/logo-granplus.png" class="card-img-top rounded" alt="Gran Plus">
+          <div class="card-body">
+            <h5 class="card-title">Gran Plus</h5>
+            <p class="card-text">Com proteína de frango, vitaminas e ácidos graxos essenciais para filhotes saudáveis,
+              ativos e com pelagem brilhante.</p>
+            <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Gran Plus para gato filhote."
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO MOBILE -->
+  <section class="mobile-marcas d-md-none container">
+    <h1 class="text-center mb-4">Marcas de Ração para <br> Gato Filhote</h1>
+    <div class="row g-3">
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-origens.png" alt="Origens">
+          <h5>Origens</h5>
+          <p>Com nutrientes equilibrados para o crescimento saudável e imunidade dos filhotes.</p>
+          <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Origens para gato filhote."
+            class="btn btn-success w-100">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-premier.png" alt="Premier">
+          <h5>Premier</h5>
+          <p>Ração super premium com DHA e proteínas ideais para o desenvolvimento dos filhotes.</p>
+          <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Premier para gato filhote."
+            class="btn btn-success w-100">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-bioN.png" alt="BioNatural">
+          <h5>BioNatural</h5>
+          <p>Fórmula com ingredientes naturais que promovem crescimento forte e saudável.</p>
+          <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração BioNatural para gato filhote."
+            class="btn btn-success w-100">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-golden.png" alt="Golden">
+          <h5>Golden</h5>
+          <p>Indicado para filhotes em fase de transição alimentar com suporte imunológico.</p>
+          <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Golden para gato filhote."
+            class="btn btn-success w-100">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-guabi.png" alt="Guabi Natural">
+          <h5>Guabi Natural</h5>
+          <p>Com ingredientes nobres, ideal para fortalecer ossos e pelagem de filhotes.</p>
+          <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Guabi Natural para gato filhote."
+            class="btn btn-success w-100">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-N&D.png" alt="N&D">
+          <h5>N&D</h5>
+          <p>Sem transgênicos e com alto valor nutricional para gatos filhotes exigentes.</p>
+          <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração N&D para gato filhote."
+            class="btn btn-success w-100">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-specialCat.png" alt="Special Cat">
+          <h5>Special Cat</h5>
+          <p>Sabor e nutrição que agradam o paladar e apoiam o desenvolvimento dos filhotes.</p>
+          <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Special Cat para gato filhote."
+            class="btn btn-success w-100">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-pedigree.png" alt="Pedigree">
+          <h5>Pedigree</h5>
+          <p>Fórmula balanceada com vitaminas essenciais para vitalidade dos filhotes.</p>
+          <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Pedigree para gato filhote."
+            class="btn btn-success w-100">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-formulaN.png" alt="Fórmula Natural">
+          <h5>Fórmula Natural</h5>
+          <p>Rica em prebióticos, DHA <br> e antioxidantes <br> para um desenvolvimento completo.</p>
+          <a href="https://wa.me/5515996601012?text=Olá! Gostaria de comprar ração Fórmula Natural para gato filhote."
+            class="btn btn-success w-100">WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CATEGORIAS VISUAIS - DESKTOP -->
+  <section class="container my-5 px-3 d-none d-md-block">
+    <h2 class="text-center mb-4 text-black">Categorias</h2>
+    <div class="row gx-2 justify-content-center align-items-start text-center">
+      <!-- Farmácia -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/farmacia.html" class="text-decoration-none">
+          <img src="../imgs/fotoF-categ.png" alt="Farmácia" class="img-fluid rounded-circle mb-2" style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Farmácia</p>
+        </a>
+      </div>
+      <!-- Cachorro -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/cachorro.html" class="text-decoration-none">
+          <img src="../imgs/fotoD-categ.png" alt="Cachorro" class="img-fluid rounded-circle mb-2" style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Cachorro</p>
+        </a>
+      </div>
+      <!-- Gato -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/gato.html" class="text-decoration-none">
+          <img src="../imgs/fotoG-categ.png" alt="Gato" class="img-fluid rounded-circle mb-2" style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Gato</p>
+        </a>
+      </div>
+      <!-- Pesca -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/pesca.html" class="text-decoration-none">
+          <img src="../imgs/fotoPesca-categ.png" alt="Pesca" class="img-fluid rounded-circle mb-2" style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Pesca</p>
+        </a>
+      </div>
+      <!-- Jardinagem -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/jardinagem.html" class="text-decoration-none">
+          <img src="../imgs/fotoJ-categ.png" alt="Jardinagem" class="img-fluid rounded-circle mb-2"
+            style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Jardinagem</p>
+        </a>
+      </div>
+      <!-- Banho e Tosa -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/banho-tosa.html" class="text-decoration-none">
+          <img src="../imgs/fotoBanho-categ.png" alt="Banho e Tosa" class="img-fluid rounded-circle mb-2"
+            style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Banho e Tosa</p>
+        </a>
+      </div>
+      <!-- Outros Pets -->
+      <div class="col categoria-bloco">
+        <a href="../categorias/outrosAnimais.html" class="text-decoration-none">
+          <img src="../imgs/fotoP-categ.png" alt="Outros Pets" class="img-fluid rounded-circle mb-2"
+            style="width: 90px;">
+          <p class="fw-bold text-dark mb-0">Outros Pets</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS VISUAIS - MOBILE -->
+  <section class="container my-5 px-3 d-block d-md-none">
+    <h2 class="text-center mb-4 text-black">Categorias</h2>
+    <div class="row row-cols-2 g-3 justify-content-center text-center">
+      <!-- Mesmas categorias com espaçamento e tamanho ajustados -->
+      <div class="col">
+        <a href="../categorias/farmacia.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoF-categ.png" alt="Farmácia" class="img-fluid rounded-circle mb-2" style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Farmácia</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/cachorro.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoD-categ.png" alt="Cachorro" class="img-fluid rounded-circle mb-2" style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Cachorro</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/gato.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoG-categ.png" alt="Gato" class="img-fluid rounded-circle mb-2" style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Gato</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/pesca.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoPesca-categ.png" alt="Pesca" class="img-fluid rounded-circle mb-2" style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Pesca</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/jardinagem.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoJ-categ.png" alt="Jardinagem" class="img-fluid rounded-circle mb-2"
+            style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Jardinagem</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/banho-tosa.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoBanho-categ.png" alt="Banho e Tosa" class="img-fluid rounded-circle mb-2"
+            style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Banho e Tosa</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="../categorias/outrosAnimais.html" class="text-decoration-none d-block">
+          <img src="../imgs/fotoP-categ.png" alt="Outros Pets" class="img-fluid rounded-circle mb-2"
+            style="width: 80px;">
+          <p class="fw-bold text-dark mb-0">Outros Pets</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-light text-dark pt-5 pb-4 mt-auto">
+    <div class="container text-center text-md-start">
+      <div class="row gy-4">
+        <div class="col-12 col-md-3">
+          <img src="../imgs/logoEscrita.png" alt="AgroPetFaccioli" style="max-width: 180px;">
+        </div>
+        <div class="col-6 col-md-2">
+          <h5 class="footer-title">Sobre nós</h5>
+          <ul class="list-unstyled">
+            <li><a class="footer-link" href="../institucional/quem-somos.html">Quem somos</a></li>
+            <li><a class="footer-link" href="../institucional/nossas-lojas.html">Nossas lojas</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5 class="footer-title">Dúvidas</h5>
+          <ul class="list-unstyled">
+            <li><a class="footer-link" href="../institucional/atendimento.html">Atendimento</a></li>
+            <li><a class="footer-link" href="../institucional/politica-entrega.html">Política de entrega</a>
+            </li>
+            <li><a class="footer-link" href="../institucional/politica-privacidade.html">Política de
+                privacidade</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5 class="footer-title">Serviços Pet</h5>
+          <ul class="list-unstyled">
+            <li><a class="footer-link" href="../institucional/banho-e-tosa.html">Banho e Tosa</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5 class="footer-title">Siga nas redes</h5>
+          <a href="#"><img src="../imgs/icon-insta.png" width="30" class="me-2"></a>
+          <a href="#"><img src="../imgs/icon-whatsapp.png" width="30"></a>
+        </div>
+      </div>
+      <div class="text-center text-muted mt-4">
+        &copy; 2025 AgroPetFaccioli – Todos os direitos reservados
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // ✅ SEGURANÇA: só adiciona listener se existir o elemento
+      function setupSearch(formId, inputId) {
+        const form = document.getElementById(formId);
+        const input = document.getElementById(inputId);
+        if (!form || !input) return;
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const query = input.value.trim().toLowerCase();
+          if (!query) return;
+
+          const keywordsMap = {
+            'ração para gato': '/categorias/gato.html',
+            'ração de gato': '/categorias/gato.html',
+            'ração de cachorro': '/categorias/cachorro.html',
+            'ração para cachorro': '/categorias/cachorro.html',
+            'ração outros': '/categorias/outrosAnimais.html',
+            'ração de roedores': '/categorias/outrosAnimais.html',
+            'ração para roedores': '/categorias/outrosAnimais.html',
+            'ração de aves': '/categorias/outrosAnimais.html',
+            'ração para aves': '/categorias/outrosAnimais.html',
+            'ração': '/categorias/cachorro.html',
+            'rações': '/categorias/cachorro.html',
+            'ração de gato adulto': '/produtos/gato-adulto.html',
+            'ração de gato filhote': '/produtos/gato-filhote.html',
+            'ração de gato castrado': '/produtos/gato-castrado.html',
+            'ração de cão adulto': '/produtos/cachorro-adulto.html',
+            'ração de cão filhote': '/produtos/cachorro-filhote.html',
+            'ração de cão idoso': '/produtos/cachorro-senior.html',
+            'areia': '/produtos/gato-areia.html',
+            'areia para gato': '/produtos/gato-areia.html',
+            'tapete higienico': '/produtos/higieneDog.html',
+            'brinquedos para gato': '/produtos/gato-acessorios.html',
+            'brinquedos para cachorro': '/produtos/cachorro-brinquedos.html',
+            'mordedor': '/produtos/cachorro-brinquedos.html',
+            'arranhador': '/produtos/gato-acessorios.html',
+            'arranhador para gatos': '/produtos/gato-acessorios.html',
+            'caminha de gato': '/produtos/caminha-gato.html',
+            'caminha de cachorro': '/produtos/caminha-cachorro.html',
+            'casinha de cachorro': '/produtos/caminha-cachorro.html',
+            'farmácia': '/categorias/farmacia.html',
+            'farmacia': '/categorias/farmacia.html',
+            'banho': '/categorias/banho-tosa.html',
+            'banho e tosa': '/categorias/banho-tosa.html',
+            'tosa': '/categorias/banho-tosa.html',
+            'tosa e banho': '/categorias/banho-tosa.html',
+            'pesca': '/categorias/pesca.html',
+            'jardinagem': '/categorias/jardinagem.html',
+            'jardim': '/categorias/jardinagem.html',
+            'outros': '/categorias/outrosAnimais.html',
+            'cachorro': '/categorias/cachorro.html',
+            'gato': '/categorias/gato.html'
+          };
+
+          for (const keyword in keywordsMap) {
+            if (query.includes(keyword)) {
+              window.location.href = keywordsMap[keyword];
+              return;
+            }
+          }
+
+          alert("Produto ou categoria não encontrado.");
+        });
+      }
+
+      setupSearch("searchFormDesktop", "searchInputDesktop");
+      setupSearch("searchFormMobile", "searchInputMobile");
+
+      // ✅ MENU NAVBAR
+      const gatoToggle = document.getElementById("gatoToggle");
+      const cachorroToggle = document.getElementById("cachorroToggle");
+      const submenuGato = document.getElementById("submenuGato");
+      const submenuCachorro = document.getElementById("submenuCachorro");
+      const allNavLinks = document.querySelectorAll(".nav-link");
+
+      function resetNavActive() {
+        allNavLinks.forEach(link => link.classList.remove("nav-active"));
+      }
+
+      function fecharMenus() {
+        submenuGato?.classList.remove("show");
+        submenuCachorro?.classList.remove("show");
+        document.querySelectorAll('.sub-submenu').forEach(el => el.classList.remove('show'));
+      }
+
+      // Ativar menu conforme página atual
+      const currentPath = window.location.pathname.split("/").pop();
+      allNavLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if (href && href.includes(currentPath)) {
+          link.classList.add("nav-active");
+        }
+      });
+
+      allNavLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+          if (!this.id.includes("Toggle")) {
+            fecharMenus();
+            resetNavActive();
+            this.classList.add("nav-active");
+          }
+        });
+      });
+
+      // Gato
+      gatoToggle?.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = submenuGato.classList.contains("show");
+        fecharMenus();
+        resetNavActive();
+        if (!isOpen) {
+          submenuGato.classList.add("show");
+          gatoToggle.classList.add("nav-active");
+        }
+      });
+
+      // Cachorro
+      cachorroToggle?.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = submenuCachorro.classList.contains("show");
+        fecharMenus();
+        resetNavActive();
+        if (!isOpen) {
+          submenuCachorro.classList.add("show");
+          cachorroToggle.classList.add("nav-active");
+        }
+      });
+
+      // Fecha menus ao clicar fora
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".submenu-wrapper") && !e.target.closest(".nav-item")) {
+          fecharMenus();
+          resetNavActive();
+        }
+      });
+
+      // Submenu dinâmico interno
+      document.querySelectorAll(".submenu-wrapper .categoria-link").forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const submenu = this.getAttribute("data-submenu");
+          const wrapper = this.closest(".submenu-wrapper");
+
+          wrapper.querySelectorAll(".sub-submenu").forEach(div => div.classList.remove("show"));
+          wrapper.querySelectorAll(".categoria-link").forEach(l => l.classList.remove("active"));
+          this.classList.add("active");
+
+          const target = wrapper.querySelector("#submenu-" + submenu);
+          if (target) target.classList.add("show");
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
