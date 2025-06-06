@@ -446,7 +446,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // ✅ SEGURANÇA: só adiciona listener se existir o elemento
+      const base = "/agropetfaccioli-site";
+
       function setupSearch(formId, inputId) {
         const form = document.getElementById(formId);
         const input = document.getElementById(inputId);
@@ -458,46 +459,46 @@
           if (!query) return;
 
           const keywordsMap = {
-            'ração para gato': '/categorias/gato.html',
-            'ração de gato': '/categorias/gato.html',
-            'ração de cachorro': '/categorias/cachorro.html',
-            'ração para cachorro': '/categorias/cachorro.html',
-            'ração outros': '/categorias/outrosAnimais.html',
-            'ração de roedores': '/categorias/outrosAnimais.html',
-            'ração para roedores': '/categorias/outrosAnimais.html',
-            'ração de aves': '/categorias/outrosAnimais.html',
-            'ração para aves': '/categorias/outrosAnimais.html',
-            'ração': '/categorias/cachorro.html',
-            'rações': '/categorias/cachorro.html',
-            'ração de gato adulto': '/produtos/gato-adulto.html',
-            'ração de gato filhote': '/produtos/gato-filhote.html',
-            'ração de gato castrado': '/produtos/gato-castrado.html',
-            'ração de cão adulto': '/produtos/cachorro-adulto.html',
-            'ração de cão filhote': '/produtos/cachorro-filhote.html',
-            'ração de cão idoso': '/produtos/cachorro-senior.html',
-            'areia': '/produtos/gato-areia.html',
-            'areia para gato': '/produtos/gato-areia.html',
-            'tapete higienico': '/produtos/higieneDog.html',
-            'brinquedos para gato': '/produtos/gato-acessorios.html',
-            'brinquedos para cachorro': '/produtos/cachorro-brinquedos.html',
-            'mordedor': '/produtos/cachorro-brinquedos.html',
-            'arranhador': '/produtos/gato-acessorios.html',
-            'arranhador para gatos': '/produtos/gato-acessorios.html',
-            'caminha de gato': '/produtos/caminha-gato.html',
-            'caminha de cachorro': '/produtos/caminha-cachorro.html',
-            'casinha de cachorro': '/produtos/caminha-cachorro.html',
-            'farmácia': '/categorias/farmacia.html',
-            'farmacia': '/categorias/farmacia.html',
-            'banho': '/categorias/banho-tosa.html',
-            'banho e tosa': '/categorias/banho-tosa.html',
-            'tosa': '/categorias/banho-tosa.html',
-            'tosa e banho': '/categorias/banho-tosa.html',
-            'pesca': '/categorias/pesca.html',
-            'jardinagem': '/categorias/jardinagem.html',
-            'jardim': '/categorias/jardinagem.html',
-            'outros': '/categorias/outrosAnimais.html',
-            'cachorro': '/categorias/cachorro.html',
-            'gato': '/categorias/gato.html'
+            'ração para gato': `${base}/categorias/gato.html`,
+            'ração de gato': `${base}/categorias/gato.html`,
+            'ração de cachorro': `${base}/categorias/cachorro.html`,
+            'ração para cachorro': `${base}/categorias/cachorro.html`,
+            'ração outros': `${base}/categorias/outrosAnimais.html`,
+            'ração de roedores': `${base}/categorias/outrosAnimais.html`,
+            'ração para roedores': `${base}/categorias/outrosAnimais.html`,
+            'ração de aves': `${base}/categorias/outrosAnimais.html`,
+            'ração para aves': `${base}/categorias/outrosAnimais.html`,
+            'ração': `${base}/categorias/cachorro.html`,
+            'rações': `${base}/categorias/cachorro.html`,
+            'ração de gato adulto': `${base}/produtos/gato-adulto.html`,
+            'ração de gato filhote': `${base}/produtos/gato-filhote.html`,
+            'ração de gato castrado': `${base}/produtos/gato-castrado.html`,
+            'ração de cão adulto': `${base}/produtos/cachorro-adulto.html`,
+            'ração de cão filhote': `${base}/produtos/cachorro-filhote.html`,
+            'ração de cão idoso': `${base}/produtos/cachorro-senior.html`,
+            'areia': `${base}/produtos/gato-areia.html`,
+            'areia para gato': `${base}/produtos/gato-areia.html`,
+            'tapete higienico': `${base}/produtos/higieneDog.html`,
+            'brinquedos para gato': `${base}/produtos/gato-acessorios.html`,
+            'brinquedos para cachorro': `${base}/produtos/cachorro-brinquedos.html`,
+            'mordedor': `${base}/produtos/cachorro-brinquedos.html`,
+            'arranhador': `${base}/produtos/gato-acessorios.html`,
+            'arranhador para gatos': `${base}/produtos/gato-acessorios.html`,
+            'caminha de gato': `${base}/produtos/caminha-gato.html`,
+            'caminha de cachorro': `${base}/produtos/caminha-cachorro.html`,
+            'casinha de cachorro': `${base}/produtos/caminha-cachorro.html`,
+            'farmácia': `${base}/categorias/farmacia.html`,
+            'farmacia': `${base}/categorias/farmacia.html`,
+            'banho': `${base}/categorias/banho-tosa.html`,
+            'banho e tosa': `${base}/categorias/banho-tosa.html`,
+            'tosa': `${base}/categorias/banho-tosa.html`,
+            'tosa e banho': `${base}/categorias/banho-tosa.html`,
+            'pesca': `${base}/categorias/pesca.html`,
+            'jardinagem': `${base}/categorias/jardinagem.html`,
+            'jardim': `${base}/categorias/jardinagem.html`,
+            'outros': `${base}/categorias/outrosAnimais.html`,
+            'cachorro': `${base}/categorias/cachorro.html`,
+            'gato': `${base}/categorias/gato.html`
           };
 
           for (const keyword in keywordsMap) {
@@ -514,7 +515,6 @@
       setupSearch("searchFormDesktop", "searchInputDesktop");
       setupSearch("searchFormMobile", "searchInputMobile");
 
-      // ✅ MENU NAVBAR
       const gatoToggle = document.getElementById("gatoToggle");
       const cachorroToggle = document.getElementById("cachorroToggle");
       const submenuGato = document.getElementById("submenuGato");
@@ -531,7 +531,6 @@
         document.querySelectorAll('.sub-submenu').forEach(el => el.classList.remove('show'));
       }
 
-      // Ativar menu conforme página atual
       const currentPath = window.location.pathname.split("/").pop();
       allNavLinks.forEach(link => {
         const href = link.getAttribute("href");
@@ -550,7 +549,6 @@
         });
       });
 
-      // Gato
       gatoToggle?.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -563,7 +561,6 @@
         }
       });
 
-      // Cachorro
       cachorroToggle?.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -576,7 +573,6 @@
         }
       });
 
-      // Fecha menus ao clicar fora
       document.addEventListener("click", function (e) {
         if (!e.target.closest(".submenu-wrapper") && !e.target.closest(".nav-item")) {
           fecharMenus();
@@ -584,7 +580,6 @@
         }
       });
 
-      // Submenu dinâmico interno
       document.querySelectorAll(".submenu-wrapper .categoria-link").forEach(link => {
         link.addEventListener("click", function (e) {
           e.preventDefault();
