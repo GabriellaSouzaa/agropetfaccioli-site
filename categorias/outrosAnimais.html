@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* mobile */
+    /* Ajustes gerais no mobile */
     @media (max-width: 768px) {
       .mobile-header {
         background-color: #00a6a6 !important;
@@ -39,9 +39,28 @@
         font-size: 1rem;
         text-align: center;
       }
+
+      /* 🔧 Correção visual para os blocos de categorias */
+      .row-cols-2 .col {
+        min-height: 130px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+      }
+
+      .row-cols-2 .col p {
+        text-align: center !important;
+        margin-top: 0.5rem;
+      }
+
+      .row-cols-2 .col img {
+        display: block;
+        margin: 0 auto;
+      }
     }
 
-    /* desktop */
+    /* Ajustes para desktop */
     @media (min-width: 769px) {
       h1 {
         font-size: 2.2rem;
@@ -242,45 +261,44 @@
   <section class="container my-5 px-3 d-none d-md-block">
     <h2 class="text-center mb-4 text-black">Categorias</h2>
     <div class="row row-cols-7 gx-2 justify-content-center">
-      <!-- Repetição das categorias -->
-      <div class="col text-center">
+      <div class="col text-center categoria-bloco">
         <a href="/categorias/farmacia.html" class="text-decoration-none">
           <img src="/imgs/fotoF-categ.png" alt="Farmácia" class="img-fluid rounded-circle mb-2" style="width: 90px;">
           <p class="fw-bold text-dark">Farmácia</p>
         </a>
       </div>
-      <div class="col text-center">
+      <div class="col text-center categoria-bloco">
         <a href="/categorias/cachorro.html" class="text-decoration-none">
           <img src="/imgs/fotoD-categ.png" alt="Cachorro" class="img-fluid rounded-circle mb-2" style="width: 90px;">
           <p class="fw-bold text-dark">Cachorro</p>
         </a>
       </div>
-      <div class="col text-center">
+      <div class="col text-center categoria-bloco">
         <a href="/categorias/gato.html" class="text-decoration-none">
           <img src="/imgs/fotoG-categ.png" alt="Gato" class="img-fluid rounded-circle mb-2" style="width: 90px;">
           <p class="fw-bold text-dark">Gato</p>
         </a>
       </div>
-      <div class="col text-center">
+      <div class="col text-center categoria-bloco">
         <a href="/categorias/pesca.html" class="text-decoration-none">
           <img src="/imgs/fotoPesca-categ.png" alt="Pesca" class="img-fluid rounded-circle mb-2" style="width: 90px;">
           <p class="fw-bold text-dark">Pesca</p>
         </a>
       </div>
-      <div class="col text-center">
+      <div class="col text-center categoria-bloco">
         <a href="/categorias/jardinagem.html" class="text-decoration-none">
           <img src="/imgs/fotoJ-categ.png" alt="Jardinagem" class="img-fluid rounded-circle mb-2" style="width: 90px;">
           <p class="fw-bold text-dark">Jardinagem</p>
         </a>
       </div>
-      <div class="col text-center">
+      <div class="col text-center categoria-bloco">
         <a href="/categorias/banho-tosa.html" class="text-decoration-none">
           <img src="/imgs/fotoBanho-categ.png" alt="Banho e Tosa" class="img-fluid rounded-circle mb-2"
             style="width: 90px;">
           <p class="fw-bold text-dark">Banho e Tosa</p>
         </a>
       </div>
-      <div class="col text-center">
+      <div class="col text-center categoria-bloco">
         <a href="/categorias/outrosAnimais.html" class="text-decoration-none">
           <img src="/imgs/fotoP-categ.png" alt="Outros Pets" class="img-fluid rounded-circle mb-2" style="width: 90px;">
           <p class="fw-bold text-dark">Outros Pets</p>
