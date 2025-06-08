@@ -186,8 +186,10 @@
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a class="nav-link" href="../categorias/farmacia.html">Farmácia</a></li>
           <li class="nav-item"><a class="nav-link" href="../categorias/outrosAnimais.html">Outros animais</a></li>
+
+          <!-- Gato -->
           <li class="nav-item position-relative">
-            <button class="nav-link btn btn-link text-light" id="gatoToggle" type="button">Gato</button>
+            <a class="nav-link" href="#" id="gatoToggle">Gato</a>
             <div id="submenuGato" class="submenu-wrapper">
               <div class="submenu-column">
                 <h6>Menu</h6>
@@ -222,8 +224,10 @@
               </div>
             </div>
           </li>
+
+          <!-- Cachorro -->
           <li class="nav-item position-relative">
-            <button class="nav-link btn btn-link text-dark" id="cachorroToggle" type="button">Cachorro</button>
+            <a class="nav-link" href="#" id="cachorroToggle">Cachorro</a>
             <div id="submenuCachorro" class="submenu-wrapper">
               <div class="submenu-column">
                 <h6>Menu</h6>
@@ -258,9 +262,9 @@
               </div>
             </div>
           </li>
-          <li class="nav-item"><a class="nav-link" href="../categorias/banho-tosa.html">Banho e Tosa</a></li>
           <li class="nav-item"><a class="nav-link" href="../categorias/pesca.html">Pesca</a></li>
           <li class="nav-item"><a class="nav-link" href="../categorias/jardinagem.html">Jardinagem</a></li>
+          <li class="nav-item"><a class="nav-link" href="../categorias/banho-tosa.html">Banho e Tosa</a></li>
         </ul>
       </div>
     </div>
@@ -480,7 +484,44 @@
           </div>
         </div>
       </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+          <img src="../imgs/logo-ultra.png" class="card-img-top" alt="Ultra Alimentos">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Ultra Alimentos</h5>
+            <p class="card-text">Ração com excelente equilíbrio nutricional, ingredientes selecionados e ótima
+              aceitação. Ideal para manter a saúde e energia dos cães adultos.</p>
+            <a href="https://wa.me/5515996601012?text=Gostaria de comprar racao Ultra Alimentos para cachorro adulto"
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+          <img src="../imgs/logo-allcanis.png" class="card-img-top" alt="Allcanis">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Allcanis</h5>
+            <p class="card-text">Com ingredientes funcionais, vitaminas e minerais que fortalecem a imunidade e promovem
+              uma nutrição diária equilibrada para cães adultos.</p>
+            <a href="https://wa.me/5515996601012?text=Gostaria de comprar racao Allcanis para cachorro adulto"
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center">
+          <img src="../imgs/logo-qualiday.png" class="card-img-top" alt="Qualiday">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Qualiday</h5>
+            <p class="card-text">Ração saborosa e nutritiva, com fibras e nutrientes que auxiliam na digestão e promovem
+              vitalidade e bem-estar diário.</p>
+            <a href="https://wa.me/5515996601012?text=Gostaria de comprar racao Qualiday para cachorro adulto"
+              class="btn btn-success w-100" target="_blank">Comprar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -639,6 +680,35 @@
           <h5>Gran Plus</h5>
           <p>Proteínas nobres, fácil digestão e pelagem saudável.</p>
           <a href="https://wa.me/5515996601012?text=Gostaria de comprar racao Gran Plus para cachorro adulto"
+            class="btn btn-success btn-sm w-100" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-ultra.png" alt="Ultra Alimentos">
+          <h5>Ultra Alimentos</h5>
+          <p>Nutrição equilibrada e ótima aceitação.</p>
+          <a href="https://wa.me/5515996601012?text=Gostaria de comprar racao Ultra Alimentos para cachorro adulto"
+            class="btn btn-success btn-sm w-100" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-allcanis.png" alt="Allcanis">
+          <h5>Allcanis</h5>
+          <p>Fórmula com vitaminas e imunidade reforçada.</p>
+          <a href="https://wa.me/5515996601012?text=Gostaria de comprar racao Allcanis para cachorro adulto"
+            class="btn btn-success btn-sm w-100" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="mobile-card">
+          <img src="../imgs/logo-qualiday.png" alt="Qualiday">
+          <h5>Qualiday</h5>
+          <p>Auxilia na digestão e bem-estar diário.</p>
+          <a href="https://wa.me/5515996601012?text=Gostaria de comprar racao Qualiday para cachorro adulto"
             class="btn btn-success btn-sm w-100" target="_blank">WhatsApp</a>
         </div>
       </div>
@@ -804,7 +874,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const base = "/agropetfaccioli-site";
+      const base = window.location.pathname.includes("/agropetfaccioli-site") ? "/agropetfaccioli-site" : "";
 
       function setupSearch(formId, inputId) {
         const form = document.getElementById(formId);
